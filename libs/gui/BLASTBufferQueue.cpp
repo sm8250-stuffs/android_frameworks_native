@@ -1198,4 +1198,10 @@ void BLASTBufferQueue::setTransactionHangCallback(
     mTransactionHangCallback = callback;
 }
 
+// MIUI ADD: START
+bool BLASTBufferQueue::adjustMaxDequeuedBufferCountForProducer(int count) {
+    return mProducer->adjustMaxDequeuedBufferCount(count) == NO_ERROR;
+}
+// END
+
 } // namespace android
